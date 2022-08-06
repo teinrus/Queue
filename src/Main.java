@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
-    public static List<Person> generateClients(List temp) {
+    public static List<Person> generateClients(List<Person> temp) {
 
 
         temp.add(new Person("Petr", "Petrov", 1));
@@ -15,7 +15,7 @@ public class Main {
         return temp;
     }
 
-    public static void print(List list) {
+    public static void print(List<Person> list) {
         for (int j = 0; j < list.size(); j++) {
             System.out.println((j + 1) + "." + list.get(j));
         }
@@ -25,12 +25,11 @@ public class Main {
         List<Person> person = new LinkedList<>();
 
         print(generateClients(person));
-        ;
 
         ArrayDeque<Person> client = new ArrayDeque<>();
         // Первое добавление очереди.
-        for (int i = 0; i < person.size(); i++) {
-            client.addLast(person.get(i));
+        for (Person value : person) {
+            client.addLast(value);
         }
 
         //Первый вариант цикла

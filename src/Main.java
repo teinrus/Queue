@@ -32,22 +32,6 @@ public class Main {
             client.addLast(value);
         }
 
-        //Первый вариант цикла
-/*        while (!client.isEmpty()){
-
-            for(Person p : client){
-
-                if (p.count >0) {
-                    p.count-=1;
-                    System.out.println(p.name+" "+p.lastName+" прокатился на атракционе у клиента осталось билетов "
-                            +p.getCount());
-                }else {
-                    client.remove();
-                }
-
-            }
-        }*/
-        //Второй вариант цикла
         while (!client.isEmpty()) {
             Person p = client.getFirst();
 
@@ -57,7 +41,7 @@ public class Main {
                         + p.getCount());
                 client.addLast(p);
             }
-            client.remove();
+            client.poll();
         }
     }
 }
